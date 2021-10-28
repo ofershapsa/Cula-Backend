@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User,Long> {
     boolean existsByEmail(String email);
     List<User> getUsersByInterest(Category interest);
-    List<User> getUsersByTasks(Long taskId);
+    List<User> getUsersByTasksId(Long taskId);
 
 }

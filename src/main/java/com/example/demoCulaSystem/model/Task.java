@@ -30,8 +30,8 @@ public class Task {
     private TaskPriority taskPriority;
     @ManyToMany
     @JoinTable(name = "users_tasks",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "task_id"))
+            joinColumns = @JoinColumn(name = "task_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> team;
     @ManyToMany
     private List<User> adminsTask;

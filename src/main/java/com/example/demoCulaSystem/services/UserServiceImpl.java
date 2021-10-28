@@ -72,11 +72,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> getUsersByTasks(Long taskId) throws UserException{
-        Task task = taskRepository.getOne(taskId);
-        List<User> userList = task.getTeam();
+//        Task task = taskRepository.getOne(taskId);
+//        List<User> userList = task.getTeam();
+        List<User> userList = userRepository.getUsersByTasksId(taskId);
+        System.out.println(userList);
         if (userList.isEmpty()) {
             throw new UserException("sorry, no tasks to show");
         }
-        return userList;
+        return userRepository.getUsersByTasksId(taskId);
     }
 }

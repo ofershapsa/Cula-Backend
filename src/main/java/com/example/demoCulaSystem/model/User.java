@@ -25,6 +25,9 @@ public class User {
     private Category interest;
     @ManyToMany
     @Singular
+    @JoinTable(name = "users_tasks",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "task_id"))
     private List<Task> tasks;
     @Enumerated(EnumType.STRING)
     private Provider provider;

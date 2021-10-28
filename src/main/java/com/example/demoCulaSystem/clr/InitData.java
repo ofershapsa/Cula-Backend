@@ -41,8 +41,9 @@ class InitData implements CommandLineRunner {
                 .title("meeting in ...")
                 .build();
 
-        System.out.println(task1);
+
         taskRepository.save(task1);
+        System.out.println(task1);
 
 
         User user2 = User.builder()
@@ -59,7 +60,8 @@ class InitData implements CommandLineRunner {
                 .taskStatus(TaskStatus.COMPLETED)
                 .title("meeting in ...")
                 .build();
-        System.out.println(task2);
+
         taskRepository.save(task2);
+        System.out.println(task2);
     }
 }
